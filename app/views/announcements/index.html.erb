@@ -12,10 +12,12 @@
     <%= announcement.body %>
     </div>
     <div class = "text_content">
-      <p>Fecha de creacion:  <%= announcement.created_at.strftime("%d del mes %B del año %Y") %></p>
+      <p>Fecha de creacion:  <%= announcement.date %> </p>
     </div>
     <%= link_to "Visit", announcement,class:"btn" %>
+    <%= link_to "Delete", announcement, method: :delete %>
   </div>
+
 <% end %>
 
 

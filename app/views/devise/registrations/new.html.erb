@@ -4,26 +4,26 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="controls">
-      <%= f.text_field :name, autofocus: true, autocomplete: "Name", placeholder:"Name " %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "Name", placeholder:"Name " , class:"letra_text"%>
     </div>
 
     <div class="controls">
-      <%= f.text_field :lastName, autofocus: true, autocomplete: "lastName", placeholder:" Last Name" %>
+      <%= f.text_field :lastName, autofocus: true, autocomplete: "lastName", placeholder:" Last Name" , class:"letra_text"%>
     </div>
 
     <div class="controls">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" , class:"letra_text"%>
     </div>
 
     <div class="controls">
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", placeholder:"New Password" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"New Password", class:"letra_text" %>
     </div>
 
     <div class="controls">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"Repeat Password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"Repeat Password", class:"letra_text" %>
     </div>
 
     <div value="Registrar">

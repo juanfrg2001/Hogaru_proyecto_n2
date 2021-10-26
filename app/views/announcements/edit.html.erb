@@ -1,3 +1,16 @@
 <div style="width: 80%; margin:0 auto;">
-  <%= render "form" , name: "Edit "%>
+  <%= form_for(@announcements) do |f| %>
+    <div class = "field">
+      <%= f.text_field :title, placeholder: "Ttile", class:"form-control" %>
+    </div>
+    <div class = "field">
+      <%= f.text_area :body, placeholder: "Body of the announcement" , style:"height:250px;", class:"form-control" %>
+    </div>
+    <div class = "field">
+      <%= f.submit "Guardar", class:"btn" %>
+    </div>
+  <%end %>
+  <div class="field">
+    <%= link_to "Regresar", index_path,class:"btn" %>
+  </div>
 </div>

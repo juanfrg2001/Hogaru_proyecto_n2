@@ -1,10 +1,11 @@
 class AnnouncementsController < ApplicationController
+
   def index
     @announcements = Announcement.all
   end
   def home
     unless current_user.nil?
-      @announcement = Announcement.where.not(user_id: current_user.id)
+      @announcements = Announcement.where.not(user_id: current_user.id)
     end
   end
   def user
@@ -24,7 +25,7 @@ class AnnouncementsController < ApplicationController
 
   def create
     @announcement = current_user.announcements.new(article_params)
-
+    @announcement.update(date:Date.today)
     if @announcement.save
       redirect_to index_path
     else
@@ -34,14 +35,14 @@ class AnnouncementsController < ApplicationController
   def destroy
     @announcement = Announcement.find(params[:id])
     @announcement.destroy
-    redirect_to index_path
+    redirect_to home_path
   end
   def edit
     @announcement = Announcement.find(params[:id])
   end
 
   def update
-    @announcement = Announcement.find(params[:id])
+    @announcement = @user.announcements.find(params[:id])
     if @announcement.update(article_params)
       redirect_to @announcement
     else

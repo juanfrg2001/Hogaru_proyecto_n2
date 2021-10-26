@@ -2,10 +2,10 @@
   <section class="form-register">
     <h4>Formulario Inicio Sesion</h4>
     <div class="controls">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email" , class:"letra_text" %>
     </div>
     <div class="controls">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class:"letra_text" %>
     </div>
     <% if devise_mapping.rememberable? %>
       <div class="controls">

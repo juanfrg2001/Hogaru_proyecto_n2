@@ -1,6 +1,6 @@
 
 <body>
-<%- if user_signed_in? %>
+<% if user_signed_in? %>
   <h1 class="titulo_bienvenida">Bienvenido <%= current_user.email %></h1>
   <div class = "content_home">
   <div class = "Section">
@@ -42,10 +42,11 @@
   </div>
   <div class = "content_not">
     <h1 class = "teme_not">Notifications</h1>
-      <%= @announcement.each do |announcement| %>
+      <% @announcements.each do |announcement| %>
         <p>
         The User <%= announcement.user.email %> create a Announcement
         </p>
+
     <% end %>
   </div>
 
