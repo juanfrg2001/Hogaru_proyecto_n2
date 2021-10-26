@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Proyecto1</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Proyecto 2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <header>
-    <nav class="be-red white large-padding">
-      <ul class="no-list row center-xs around-xs middle-xs">
-        <li class="col-md">
-          <h1 class = "no-margin">Aplication Blog</h1>
-        </li>
-        <li class="col-md">
-          <%= link_to "Inicio", root_path %>
-        </li>
-        <li class="col-md">
-          Diseño
-        </li>
-        <li class="col-md">
-          Programacion
-        </li>
-        <li class="col-md">
-          <%= link_to "Aricles", "../articles/index" %>
-        </li>
-        <li class="col-md">
-          Tecnologia
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <%- if user_signed_in? %>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Cuenta", home_path%></li>
+              <li><%= link_to "Announcements", index_path%></li>
+              <li><%= link_to "Create Announcement", new_announcement_path%></li>
+              <li class="login"><%= link_to 'Exit', destroy_user_session_path, method: :delete%></li>
+            </ul>
+
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+  <% else %>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#home">Home</a></li>
+
+              <li class="login"><a href="#">Sign In</a></li>
+            </ul>
+
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
 
 
-
-    <%= yield %>
-  </body>
+  <% end %>
+</header>
+<body>
+<%= yield %>
+</body>
 </html>
