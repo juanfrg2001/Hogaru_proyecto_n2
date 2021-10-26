@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_action
+
   def index
     @announcements = Announcement.all
   end
