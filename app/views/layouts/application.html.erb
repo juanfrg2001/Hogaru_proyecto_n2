@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <nav class="be-red white large-padding">
+      <ul class="no-list row center-xs around-xs middle-xs">
+        <li class="col-md">
+          <h1 class = "no-margin">Aplication Blog</h1>
+        </li>
+        <li class="col-md">
+          <%= link_to "Inicio", root_path %>
+        </li>
+        <li class="col-md">
+          Diseño
+        </li>
+        <li class="col-md">
+          Programacion
+        </li>
+        <li class="col-md">
+          <%= link_to "Aricles", "../articles/index" %>
+        </li>
+        <li class="col-md">
+          Tecnologia
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+    <%= yield %>
+  </body>
+</html>
