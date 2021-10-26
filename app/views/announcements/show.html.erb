@@ -1,0 +1,15 @@
+<div class = "content content_view">
+<h1><%= @announcement.title %></h1>
+<p>
+  Escrito por: <%= @announcement.user.email %>
+</p>
+<p>
+  Visitas <%= @announcement.visits_count %>
+</p>
+<div class = "text_content">
+  <%= @announcement.body %>
+</div>
+<div>
+  <%= link_to "Edit", edit_announcement_path(@announcement),class:"btn" %>
+</div>
+</div>
