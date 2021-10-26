@@ -7,7 +7,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <header>
@@ -59,9 +59,9 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#home">Home</a></li>
+              <li class="active"><%= link_to "Home", home_path %></li>
 
-              <li class="login"><a href="#">Sign In</a></li>
+              <li class="login"><%= link_to "Login", new_user_session_path %></li>
             </ul>
 
           </div><!-- /.navbar-collapse -->
