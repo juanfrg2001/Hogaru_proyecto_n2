@@ -53,7 +53,7 @@ class AnnouncementsController < ApplicationController
 
   private
 
-  def article_params
+  def article_param
     params.require(:announcement).permit(:title,:body)
   end
 

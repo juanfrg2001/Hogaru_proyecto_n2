@@ -11,7 +11,7 @@
     </div>
     <div class = "imagenBasics">
       <%= link_to image_tag("packageImage_Home/create_image_icon.png", alt: "fondo image", width:"100", height: "100", class:"image"),
-                  new_announcement_path %>
+                  new_article_path %>
     </div>
   </div>
 
@@ -42,9 +42,9 @@
   </div>
   <div class = "content_not">
     <h1 class = "teme_not">Notifications</h1>
-      <% @announcements.each do |announcement| %>
+      <% @articles.each do |article| %>
         <p>
-        The User <%= announcement.user.email %> create a Announcement
+        The User <%= article.user.email %> create a Announcement
         </p>
 
     <% end %>

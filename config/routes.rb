@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :announcements
   devise_for :users
-  get 'index', to: 'announcements#index'
-  get 'home', to: 'announcements#home'
-  get 'user', to: 'announcements#user'
-  root 'announcements#home'
+  get 'index', to: 'articles#index'
+  get 'home', to: 'articles#home'
+  get 'user', to: 'articles#user'
+  root 'articles#home'
 
 
 

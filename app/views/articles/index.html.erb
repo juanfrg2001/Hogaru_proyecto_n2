@@ -1,15 +1,15 @@
-<% @announcements.each do |announcement| %>
+<% @articles.each do |announcement| %>
 
   <div class = "content content_index">
     <h1><%= announcement.title%></h1>
     <p>
-    Escrito por: <%= announcement.user.email %>
+      Escrito por: <%= announcement.user.email %>
     </p>
-    <% if announcement.visits_count != 0%>
-       <p>Visitas = TRUE</p>
+    <% if announcement.visits_coutn != 0%>
+      <p>Visitas = TRUE</p>
     <% end %>
     <div class = "text_content">
-    <%= announcement.body %>
+      <%= announcement.body %>
     </div>
     <div class = "text_content">
       <p>Fecha de creacion:  <%= announcement.date %> </p>
@@ -19,8 +19,3 @@
   </div>
 
 <% end %>
-
-
-
-
-
